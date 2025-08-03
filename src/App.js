@@ -18,12 +18,10 @@ function App() {
         <Container maxW="container.lg" py={8}>
           <Hero />
           <About />
-          <Skills />
           <Experience />
+          <Skills />
           <Projects />
           <Certifications />
-          {/* Main content sections will go here */}
-          <h1>Your Portfolio</h1>
         </Container>
         <Footer />
       </Box>

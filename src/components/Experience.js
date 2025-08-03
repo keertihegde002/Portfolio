@@ -32,16 +32,26 @@ const Experience = () => {
   };
 
   return (
-    <Box id="experience" py={20}>
+    <Box id="experience" py={{ base: 12, md: 20 }}>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <Heading as="h2" size="xl" mb={10} textAlign="center">Experience</Heading>
+        <Heading 
+          as="h2" 
+          size={{ base: "lg", md: "xl" }}
+          mb={{ base: 6, md: 10 }}
+          textAlign="center"
+          bgGradient="linear(to-r, teal.400, blue.500)"
+          bgClip="text"
+          fontWeight="extrabold"
+        >
+          Experience
+        </Heading>
       </motion.div>
 
-      <VStack spacing={8} align="stretch">
+      <VStack spacing={{ base: 6, md: 8 }} align="stretch" px={{ base: 4, md: 0 }}>
         {experienceData.map((exp, index) => (
           <motion.div key={index}
             variants={itemVariants}
@@ -49,24 +59,60 @@ const Experience = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <Box p={6} shadow="md" borderWidth="1px" borderRadius="lg" bg={cardBg}>
-              <HStack justifyContent="space-between" mb={2}>
-                <Heading as="h3" size="lg" color="teal.500">{exp.title}</Heading>
-                <Text fontSize="md" fontWeight="bold" color={textColor}>{exp.duration}</Text>
+            <Box 
+              p={{ base: 4, md: 6 }} 
+              shadow="md" 
+              borderWidth="1px" 
+              borderRadius="lg" 
+              bg={cardBg}
+            >
+              <HStack 
+                justifyContent="space-between" 
+                mb={2}
+                direction={{ base: "column", sm: "row" }}
+                align={{ base: "flex-start", sm: "center" }}
+                spacing={{ base: 2, sm: 0 }}
+              >
+                <Heading as="h3" size={{ base: "md", md: "lg" }} color="teal.500">{exp.title}</Heading>
+                <Text 
+                  fontSize={{ base: "sm", md: "md" }} 
+                  fontWeight="bold" 
+                  color={textColor}
+                >
+                  {exp.duration}
+                </Text>
               </HStack>
-              <HStack justifyContent="space-between" mb={4}>
-                <Text fontSize="md" color={textColor}>{exp.company}</Text>
-                <Text fontSize="md" color={textColor}>{exp.location}</Text>
+              <HStack 
+                justifyContent="space-between" 
+                mb={4}
+                direction={{ base: "column", sm: "row" }}
+                align={{ base: "flex-start", sm: "center" }}
+                spacing={{ base: 2, sm: 0 }}
+              >
+                <Text fontSize={{ base: "sm", md: "md" }} color={textColor}>{exp.company}</Text>
+                <Text fontSize={{ base: "sm", md: "md" }} color={textColor}>{exp.location}</Text>
               </HStack>
               <Divider mb={4} />
-              <VStack align="stretch" spacing={2} mb={4}>
+              <VStack align="stretch" spacing={{ base: 2, md: 3 }} mb={4}>
                 {exp.description.map((desc, descIndex) => (
-                  <Text key={descIndex} fontSize="md" color={textColor}>• {desc}</Text>
+                  <Text 
+                    key={descIndex} 
+                    fontSize={{ base: "sm", md: "md" }} 
+                    color={textColor}
+                    lineHeight="tall"
+                  >
+                    • {desc}
+                  </Text>
                 ))}
               </VStack>
               <HStack wrap="wrap" spacing={2}>
                 {exp.skills.map((skill, skillIndex) => (
-                  <Tag key={skillIndex} size="md" variant="solid" colorScheme="blue">
+                  <Tag 
+                    key={skillIndex} 
+                    size={{ base: "sm", md: "md" }} 
+                    variant="solid" 
+                    colorScheme="blue"
+                  >
                     {skill}
                   </Tag>
                 ))}

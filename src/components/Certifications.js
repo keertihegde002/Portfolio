@@ -11,20 +11,21 @@ const Certifications = () => {
 
   const certificationsData = [
     {
-      title: 'Python Data Structures',
-      issuer: 'University of Michigan',
-      link: '#', // Replace with actual certificate link
+      title: 'Azure Fundamentals',
+      issuer: 'Microsoft',
+      link: 'https://drive.google.com/file/d/1bgBsNyOUW0oSslTEHFyqLzYffxKm45v2/view',
     },
     {
       title: 'Introduction to Python Programming',
       issuer: 'Microsoft',
-      link: '#', // Replace with actual certificate link
+      link: 'https://www.coursera.org/account/accomplishments/verify/NRWGBWPFYEYA',
     },
     {
-      title: 'Azure Fundamentals',
-      issuer: 'Microsoft',
-      link: '#', // Replace with actual certificate link
+      title: 'Python Data Structures',
+      issuer: 'University of Michigan',
+      link: '#',
     },
+    
   ];
 
   const itemVariants = {
@@ -33,16 +34,26 @@ const Certifications = () => {
   };
 
   return (
-    <Box id="certifications" py={20}>
+    <Box id="certifications" py={{ base: 12, md: 20 }}>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <Heading as="h2" size="xl" mb={10} textAlign="center">Certifications</Heading>
+        <Heading 
+          as="h2" 
+          size={{ base: "lg", md: "xl" }}
+          mb={{ base: 6, md: 10 }}
+          textAlign="center"
+          bgGradient="linear(to-r, teal.400, blue.500)"
+          bgClip="text"
+          fontWeight="extrabold"
+        >
+          Certifications
+        </Heading>
       </motion.div>
 
-      <VStack spacing={8} align="stretch">
+      <VStack spacing={{ base: 6, md: 8 }} align="stretch" px={{ base: 4, md: 0 }}>
         {certificationsData.map((cert, index) => (
           <motion.div key={index}
             variants={itemVariants}
@@ -50,14 +61,37 @@ const Certifications = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <Box p={6} shadow="md" borderWidth="1px" borderRadius="lg" bg={cardBg}>
-              <HStack justifyContent="space-between" mb={2}>
-                <Heading as="h3" size="lg" color="teal.500">{cert.title}</Heading>
+            <Box 
+              p={{ base: 4, md: 6 }} 
+              shadow="md" 
+              borderWidth="1px" 
+              borderRadius="lg" 
+              bg={cardBg}
+            >
+              <HStack 
+                justifyContent="space-between" 
+                mb={2}
+                direction={{ base: "column", sm: "row" }}
+                align={{ base: "flex-start", sm: "center" }}
+                spacing={{ base: 2, sm: 0 }}
+              >
+                <Heading as="h3" size={{ base: "md", md: "lg" }} color="teal.500">{cert.title}</Heading>
                 <Link href={cert.link} isExternal style={{ textDecoration: 'none' }}>
-                  <Icon as={FaExternalLinkAlt} w={4} h={4} color="teal.500" _hover={{ color: 'teal.600' }} />
+                  <Icon 
+                    as={FaExternalLinkAlt} 
+                    w={{ base: 3, md: 4 }} 
+                    h={{ base: 3, md: 4 }} 
+                    color="teal.500" 
+                    _hover={{ color: 'teal.600' }} 
+                  />
                 </Link>
               </HStack>
-              <Text fontSize="md" color={textColor}>{cert.issuer}</Text>
+              <Text 
+                fontSize={{ base: "sm", md: "md" }} 
+                color={textColor}
+              >
+                {cert.issuer}
+              </Text>
             </Box>
           </motion.div>
         ))}
