@@ -154,7 +154,8 @@ const About = () => {
               boxShadow="md"
               flex="1"
             >
-              <Stack spacing={{ base: 4, md: 6 }} height="100%">
+<Stack spacing={{ base: 2, md: 3 }} height="100%">
+
                 {educationData.map((edu, index) => (
                   <motion.div
                     key={index}

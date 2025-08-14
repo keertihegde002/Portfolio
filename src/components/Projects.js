@@ -9,27 +9,40 @@ const Projects = () => {
   const cardBg = useColorModeValue('white', 'gray.700');
   const textColor = useColorModeValue('gray.700', 'gray.200');
 
-  const projectsData = [
-    {
-      title: 'LearnTogether',
-      technologies: ['Django', 'Python'],
-      description: [
-        'Developed a web application using the Django framework, allowing users to find and connect with other individuals to study online. It connects users with similar interests through customizable chat rooms.',
-        'Implemented features such as user profile creation, topic-based chat room selection, and the ability for users to host and moderate their own rooms.',
-        'Utilized Django\'s built-in ORM to create and manage a database to store user and chat room information.',
-      ],
-      link: 'https://github.com/keertihegde002/learnTogether',
-    },
-    {
-      title: 'PhotoAlbum',
-      technologies: ['Python', 'Django', 'Bootstrap'],
-      description: [
-        'The web application supports various image formats, and users can provide meaningful descriptions to aid in image categorization, making it easy to store, organize, find and access specific images.',
-        'Engineered advanced Django models to enhance search and filter capabilities, leading to 50 increase in user engagement and creating a dynamic, visually appealing image gallery for uploaded images.',
-      ],
-      link: 'https://github.com/keertihegde002/PhotoAlbum', 
-    },
-  ];
+const projectsData = [
+   {
+    title: 'Expense Tracker',
+    technologies: ['MongoDB', 'Express', 'React', 'Node.js', 'Tailwind CSS', 'JWT'],
+    description: [
+      'Engineered a full-stack MERN application for expense management, with Node.js/Express APIs and MongoDB Atlas storage ensuring 100% cloud reliability.',
+      'Designed and developed a responsive React dashboard UI using Tailwind CSS, allowing users to visualize spending trends via interactive charts.',
+      'Implemented secure JWT-based authentication and role-protected routes, ensuring data privacy for 1,000+ users and eliminating unauthorized access.',
+      'Developed reusable React component library for form inputs and chart containers, reducing frontend code duplication by 50% and accelerating feature rollout.',
+    ],
+    link: 'https://expensetracker-client-sxj5.onrender.com/login', 
+  },
+  {
+    title: 'LearnTogether',
+    technologies: ['Django', 'Python'],
+    description: [
+      'Developed a web application using the Django framework, allowing users to find and connect with other individuals to study online. It connects users with similar interests through customizable chat rooms.',
+      'Implemented features such as user profile creation, topic-based chat room selection, and the ability for users to host and moderate their own rooms.',
+      'Utilized Django\'s built-in ORM to create and manage a database to store user and chat room information.',
+    ],
+    link: 'https://github.com/keertihegde002/learnTogether',
+  },
+  {
+    title: 'PhotoAlbum',
+    technologies: ['Python', 'Django', 'Bootstrap'],
+    description: [
+      'The web application supports various image formats, and users can provide meaningful descriptions to aid in image categorization, making it easy to store, organize, find and access specific images.',
+      'Engineered advanced Django models to enhance search and filter capabilities, leading to 50 increase in user engagement and creating a dynamic, visually appealing image gallery for uploaded images.',
+    ],
+    link: 'https://github.com/keertihegde002/PhotoAlbum', 
+  },
+ 
+];
+
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
