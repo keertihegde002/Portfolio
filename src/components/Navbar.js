@@ -1,7 +1,6 @@
 import React from 'react';
-import { Box, Flex, Link, Button, Stack, IconButton, Text, useDisclosure, Collapse } from '@chakra-ui/react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import { Box, Flex, Link, Stack, IconButton, Text, useDisclosure, Collapse } from '@chakra-ui/react';
+import { FaGithub, FaLinkedin, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
 import { useColorModeValue } from '@chakra-ui/system';
 
 const navLinks = [

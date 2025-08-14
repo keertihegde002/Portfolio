@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Heading, SimpleGrid, List, ListItem, Icon, useColorModeValue, Badge } from '@chakra-ui/react';
+import { Box, Heading, SimpleGrid, List, ListItem, Icon, useColorModeValue } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { 
   SiPython, 
@@ -20,7 +20,6 @@ import {
   FaJava,
   FaHtml5,
   FaCss3Alt,
-  FaTools
 } from 'react-icons/fa';
 
 const skillsData = {
